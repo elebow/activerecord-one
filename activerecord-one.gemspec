@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
 
   spec.license       = "public domain"
 
-  spec.files = Dir['lib/*.rb']
+  spec.files = Dir['lib/**/*.rb']
   spec.require_paths = ["lib"]
 
   spec.add_dependency "rails", ">= 4"
