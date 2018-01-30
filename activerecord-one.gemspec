@@ -8,12 +8,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["elebow@users.noreply.github.com"]
 
   spec.summary       = "Provides ActiveRecord::Relation#one! to assert one record and return it."
-  spec.description   = %q{
-                        Provides `ActiveRecord::Relation#one!`, a convenience method that asserts
-                        a relation contains exactly one record and returns it. If there are no
-                        records or more than one, an `ActiveRecord::NoRecordFound` or
-                        `ActiveRecord::MultipleRecordsFound` exception is raised, respectively.
-                       }
+  spec.description   = "Provides `ActiveRecord::Relation#one!`, a convenience method that asserts a relation contains exactly one record and returns it. If there are no records or more than one, an `ActiveRecord::NoRecordFound` or `ActiveRecord::MultipleRecordsFound` exception is raised, respectively."
   spec.homepage      = "https://github.com/elebow/activerecord-one"
 
   spec.license       = "public domain"
