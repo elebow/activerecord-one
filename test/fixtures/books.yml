@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+poodr:
+  title: "Practical Object-Oriented Design in Ruby"
+  author_name: "Sandi Metz"
+
+clean_code:
+  title: "Clean Code: A Handbook of Agile Software Craftsmanship"
+  author_name: "Robert C. Martin"
+
+confident_ruby:
+  title: "Confident Ruby"
+  author_name: "Avdi Grimm"
