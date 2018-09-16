@@ -29,14 +29,14 @@ Therefore, given the following records:
 #<Record id: 3, name: "Bob", color: "green">
 ```
 
-The following expression has undefined behavior:
+The following expression has **undefined behavior**:
 
 ```ruby
-Record.find_by(name: "Bob")
+Record.find_by(name: "Bob")    # could return record 2 or record 3!
 ```
-That can be slightly surprising, especially if you don't have uniqueness constraints in your database. Even worse, there is no indication whether the condition matched more than record.
+The record returned is whatever the database decides is first. There's no way to tell from the code alone which it will be, or that such a thing has even happened. In other words, `find_by` is only safe when you specify the order of rows, or have confidence that no more than one row will match—usually thanks to a uniqueness constraint in the database.
 
-To verify uniqueness in the application, you'd need to do it manually. Something like:
+If you expect only one row to match but don't have a database uniqueness constraint (perhaps due to non-unique legacy data, for example), you would need to do something like:
 ```ruby
 raise unless Record.where(name: "Bob").count == 1
 Record.find_by(name: "Bob")
@@ -46,7 +46,7 @@ Or, with this gem:
 Record.where(name: "Bob").one!
 ```
 
-## Shouldn't this be addressed in Rails?
+## Shouldn't this be provided by Rails?
 Probably. See https://github.com/rails/rails/pull/26206.
 
 ## Installation
