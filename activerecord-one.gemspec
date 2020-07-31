@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.files = Dir['lib/**/*.rb']
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "rails", ">= 4"
+  spec.add_dependency "activerecord", ">= 4"
 
   spec.add_development_dependency "sqlite3"
 end
